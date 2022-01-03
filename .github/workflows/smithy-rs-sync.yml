@@ -17,19 +17,23 @@ jobs:
     name: run sync tool
     runs-on: ubuntu-latest
     steps:
+    # - name: checkout aws-sdk-rust
+    #   uses: actions/checkout@v2
+    #   with:
+    #     ref: next
+    #     path: aws-sdk-rust
+    #     fetch-depth: 0
+    # - name: checkout smithy-rs
+    #   uses: actions/checkout@v2
+    #   with:
+    #     repository: awslabs/smithy-rs
+    #     ref: sync-script-iteration
+    #     path: smithy-rs
+    #     fetch-depth: 0
     - name: checkout aws-sdk-rust
-      uses: actions/checkout@v2
-      with:
-        ref: next
-        path: aws-sdk-rust
-        fetch-depth: 0
+      run: git clone --branch next https://github.com/awslabs/aws-sdk-rust.git aws-sdk-rust
     - name: checkout smithy-rs
-      uses: actions/checkout@v2
-      with:
-        repository: awslabs/smithy-rs
-        ref: sync-script-iteration
-        path: smithy-rs
-        fetch-depth: 0
+      run: git clone --branch main https://github.com/awslabs/smithy-rs.git smithy-rs
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
