@@ -43,7 +43,7 @@ jobs:
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
-        cargo run --release \
+        cargo run --release -- \
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust
     - name: push commits
