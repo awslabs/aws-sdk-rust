@@ -8,19 +8,19 @@
 
 # Folders
 
-.cargo/
-.github/
-tools/
+/.cargo/
+/.github/
+/tools/
 
 # Files
 
-_config.yml
-.gitignore
-.handwritten_files
-CHANGELOG.md
-CODE_OF_CONDUCT.md
-CODEOWNERS
-CONTRIBUTING.md
-LICENSE
-NOTICE
-README.md
+/_config.yml
+/.gitignore
+/.handwritten_files
+/CHANGELOG.md
+/CODE_OF_CONDUCT.md
+/CODEOWNERS
+/CONTRIBUTING.md
+/LICENSE
+/NOTICE
+/README.md
