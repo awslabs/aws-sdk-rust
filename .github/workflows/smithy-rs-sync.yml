@@ -13,12 +13,9 @@ env:
   java_version: 11
 
 jobs:
-  repo-lint:
-    name: run sync tool
+  run-sync-tool:
     runs-on: ubuntu-latest
     steps:
-    - name: get git
-      run: apk add git --update-cache
     # - name: checkout aws-sdk-rust
     #   uses: actions/checkout@v2
     #   with:
