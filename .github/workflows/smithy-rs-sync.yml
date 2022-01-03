@@ -38,12 +38,18 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{ env.java_version }}
+    - name: fetch aws-sdk-rust
+      working-directory: aws-sdk-rust
+      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin next
+    - name: fetch smithy-rs
+      working-directory: smithy-rs
+      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin sync-script-iteration
     - name: cat .handwritten
       run: cat aws-sdk-rust/.handwritten
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
-        cargo run --release -- \
+        cargo run -- \
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust
     - name: push commits
