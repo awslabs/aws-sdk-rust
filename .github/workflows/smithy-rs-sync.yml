@@ -17,6 +17,8 @@ jobs:
     name: run sync tool
     runs-on: ubuntu-latest
     steps:
+    - name: get git
+      run: apk add git --update-cache
     # - name: checkout aws-sdk-rust
     #   uses: actions/checkout@v2
     #   with:
@@ -33,7 +35,7 @@ jobs:
     - name: checkout aws-sdk-rust
       run: git clone --branch next https://github.com/awslabs/aws-sdk-rust.git aws-sdk-rust
     - name: checkout smithy-rs
-      run: git clone --branch main https://github.com/awslabs/smithy-rs.git smithy-rs
+      run: git clone --branch sync-script-iteration https://github.com/awslabs/smithy-rs.git smithy-rs
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
@@ -48,8 +50,8 @@ jobs:
     - name: fetch smithy-rs
       working-directory: smithy-rs
       run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin sync-script-iteration
-    - name: cat .handwritten
-      run: cat aws-sdk-rust/.handwritten
+    - name: where is git?
+      run: which git
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
