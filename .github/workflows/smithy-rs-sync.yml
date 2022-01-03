@@ -27,7 +27,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: awslabs/smithy-rs
-        ref: main
+        ref: sync-script-iteration
         path: smithy-rs
         fetch-depth: 0
     - uses: actions-rs/toolchain@v1
