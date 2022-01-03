@@ -38,14 +38,12 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{ env.java_version }}
-    - name: build sync tool
-      run: cargo build --release
-      working-directory: smithy-rs/tools/smithy-rs-sync
     - name: cat .handwritten
       run: cat aws-sdk-rust/.handwritten
     - name: run sync tool
+      working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
-        smithy-rs/target/release/smithy-rs-sync \
+        cargo run --release \
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust
     - name: push commits
