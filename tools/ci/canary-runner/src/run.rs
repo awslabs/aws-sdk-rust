@@ -12,11 +12,13 @@
 // when running this locally.
 
 use anyhow::{bail, Context, Result};
+use aws_sdk_cloudwatch as cloudwatch;
 use aws_sdk_lambda as lambda;
 use aws_sdk_s3 as s3;
+use cloudwatch::model::StandardUnit;
 use s3::ByteStream;
 use std::path::PathBuf;
-use std::time::Duration;
+use std::time::{Duration, SystemTime};
 use std::{env, path::Path};
 use structopt::StructOpt;
 use tokio::process::Command;
@@ -44,6 +46,60 @@ pub struct RunOpt {
 }
 
 pub async fn run(opt: RunOpt) -> Result<()> {
+    let start_time = SystemTime::now();
+    let config = aws_config::load_from_env().await;
+    let result = run_canary(opt, &config).await;
+
+    let mut metrics = vec![
+        (
+            "canary-success",
+            if result.is_ok() { 1.0 } else { 0.0 },
+            StandardUnit::Count,
+        ),
+        (
+            "canary-failure",
+            if result.is_ok() { 0.0 } else { 1.0 },
+            StandardUnit::Count,
+        ),
+        (
+            "canary-total-time",
+            start_time.elapsed().expect("time in range").as_secs_f64(),
+            StandardUnit::Seconds,
+        ),
+    ];
+    if let Ok(invoke_time) = result {
+        metrics.push((
+            "canary-invoke-time",
+            invoke_time.as_secs_f64(),
+            StandardUnit::Seconds,
+        ));
+    }
+
+    let cloudwatch_client = cloudwatch::Client::new(&config);
+    let mut request_builder = cloudwatch_client
+        .put_metric_data()
+        .namespace("aws-sdk-rust-canary");
+    for metric in metrics {
+        request_builder = request_builder.metric_data(
+            cloudwatch::model::MetricDatum::builder()
+                .metric_name(metric.0)
+                .value(metric.1)
+                .timestamp(SystemTime::now().into())
+                .unit(metric.2)
+                .build(),
+        );
+    }
+
+    info!("Emitting metrics...");
+    request_builder
+        .send()
+        .await
+        .context("failed to emit metrics")?;
+
+    result.map(|_| ())
+}
+
+async fn run_canary(opt: RunOpt, config: &aws_config::Config) -> Result<Duration> {
     let repo_root = git_root().await?;
     env::set_current_dir(repo_root.join("smithy-rs/tools/ci-cdk/canary-lambda"))
         .context("failed to change working directory")?;
@@ -56,9 +112,8 @@ pub async fn run(opt: RunOpt) -> Result<()> {
     let bundle_file_name = bundle_path.file_name().unwrap().to_str().unwrap();
     let bundle_name = bundle_path.file_stem().unwrap().to_str().unwrap();
 
-    let config = aws_config::load_from_env().await;
-    let s3_client = s3::Client::new(&config);
-    let lambda_client = lambda::Client::new(&config);
+    let s3_client = s3::Client::new(config);
+    let lambda_client = lambda::Client::new(config);
 
     info!("Uploading Lambda code bundle to S3...");
     upload_bundle(
@@ -84,12 +139,14 @@ pub async fn run(opt: RunOpt) -> Result<()> {
     .await?;
 
     info!("Invoking the canary Lambda...");
+    let invoke_start_time = SystemTime::now();
     let invoke_result = invoke_lambda(lambda_client.clone(), bundle_name).await;
+    let invoke_time = invoke_start_time.elapsed().expect("time in range");
 
     info!("Deleting the canary Lambda...");
     delete_lambda_fn(lambda_client, bundle_name).await?;
 
-    invoke_result
+    invoke_result.map(|_| invoke_time)
 }
 
 async fn generate_cargo_toml(sdk_version: &str) -> Result<()> {
