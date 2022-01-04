@@ -10,6 +10,7 @@
 
 /.cargo/
 /.github/
+/.git/
 /tools/
 
 # Files
