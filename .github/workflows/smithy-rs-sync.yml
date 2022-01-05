@@ -50,7 +50,8 @@ jobs:
         cargo run -- \
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
-          --branch ${{ env.sync_to_branch }}
+          --branch ${{ env.sync_to_branch }} \
+          --max-commits-to-sync 1
     - name: push commits
       working-directory: aws-sdk-rust
       run: |
