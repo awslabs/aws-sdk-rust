@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon SageMaker Service
@@ -1183,6 +1183,7 @@ where
     ///
     /// See [`ListActions`](crate::client::fluent_builders::ListActions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActions::into_paginator).
     pub fn list_actions(&self) -> fluent_builders::ListActions<C, M, R> {
         fluent_builders::ListActions::new(self.handle.clone())
     }
@@ -1190,6 +1191,7 @@ where
     ///
     /// See [`ListAlgorithms`](crate::client::fluent_builders::ListAlgorithms) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlgorithms::into_paginator).
     pub fn list_algorithms(&self) -> fluent_builders::ListAlgorithms<C, M, R> {
         fluent_builders::ListAlgorithms::new(self.handle.clone())
     }
@@ -1197,6 +1199,7 @@ where
     ///
     /// See [`ListAppImageConfigs`](crate::client::fluent_builders::ListAppImageConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppImageConfigs::into_paginator).
     pub fn list_app_image_configs(&self) -> fluent_builders::ListAppImageConfigs<C, M, R> {
         fluent_builders::ListAppImageConfigs::new(self.handle.clone())
     }
@@ -1204,6 +1207,7 @@ where
     ///
     /// See [`ListApps`](crate::client::fluent_builders::ListApps) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApps::into_paginator).
     pub fn list_apps(&self) -> fluent_builders::ListApps<C, M, R> {
         fluent_builders::ListApps::new(self.handle.clone())
     }
@@ -1211,6 +1215,7 @@ where
     ///
     /// See [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListArtifacts::into_paginator).
     pub fn list_artifacts(&self) -> fluent_builders::ListArtifacts<C, M, R> {
         fluent_builders::ListArtifacts::new(self.handle.clone())
     }
@@ -1218,6 +1223,7 @@ where
     ///
     /// See [`ListAssociations`](crate::client::fluent_builders::ListAssociations) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociations::into_paginator).
     pub fn list_associations(&self) -> fluent_builders::ListAssociations<C, M, R> {
         fluent_builders::ListAssociations::new(self.handle.clone())
     }
@@ -1225,6 +1231,7 @@ where
     ///
     /// See [`ListAutoMLJobs`](crate::client::fluent_builders::ListAutoMLJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAutoMLJobs::into_paginator).
     pub fn list_auto_ml_jobs(&self) -> fluent_builders::ListAutoMLJobs<C, M, R> {
         fluent_builders::ListAutoMLJobs::new(self.handle.clone())
     }
@@ -1232,6 +1239,7 @@ where
     ///
     /// See [`ListCandidatesForAutoMLJob`](crate::client::fluent_builders::ListCandidatesForAutoMLJob) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCandidatesForAutoMLJob::into_paginator).
     pub fn list_candidates_for_auto_ml_job(
         &self,
     ) -> fluent_builders::ListCandidatesForAutoMLJob<C, M, R> {
@@ -1241,6 +1249,7 @@ where
     ///
     /// See [`ListCodeRepositories`](crate::client::fluent_builders::ListCodeRepositories) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCodeRepositories::into_paginator).
     pub fn list_code_repositories(&self) -> fluent_builders::ListCodeRepositories<C, M, R> {
         fluent_builders::ListCodeRepositories::new(self.handle.clone())
     }
@@ -1248,6 +1257,7 @@ where
     ///
     /// See [`ListCompilationJobs`](crate::client::fluent_builders::ListCompilationJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCompilationJobs::into_paginator).
     pub fn list_compilation_jobs(&self) -> fluent_builders::ListCompilationJobs<C, M, R> {
         fluent_builders::ListCompilationJobs::new(self.handle.clone())
     }
@@ -1255,6 +1265,7 @@ where
     ///
     /// See [`ListContexts`](crate::client::fluent_builders::ListContexts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContexts::into_paginator).
     pub fn list_contexts(&self) -> fluent_builders::ListContexts<C, M, R> {
         fluent_builders::ListContexts::new(self.handle.clone())
     }
@@ -1262,6 +1273,7 @@ where
     ///
     /// See [`ListDataQualityJobDefinitions`](crate::client::fluent_builders::ListDataQualityJobDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataQualityJobDefinitions::into_paginator).
     pub fn list_data_quality_job_definitions(
         &self,
     ) -> fluent_builders::ListDataQualityJobDefinitions<C, M, R> {
@@ -1271,6 +1283,7 @@ where
     ///
     /// See [`ListDeviceFleets`](crate::client::fluent_builders::ListDeviceFleets) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeviceFleets::into_paginator).
     pub fn list_device_fleets(&self) -> fluent_builders::ListDeviceFleets<C, M, R> {
         fluent_builders::ListDeviceFleets::new(self.handle.clone())
     }
@@ -1278,6 +1291,7 @@ where
     ///
     /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
@@ -1285,6 +1299,7 @@ where
     ///
     /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
@@ -1292,6 +1307,7 @@ where
     ///
     /// See [`ListEdgePackagingJobs`](crate::client::fluent_builders::ListEdgePackagingJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEdgePackagingJobs::into_paginator).
     pub fn list_edge_packaging_jobs(&self) -> fluent_builders::ListEdgePackagingJobs<C, M, R> {
         fluent_builders::ListEdgePackagingJobs::new(self.handle.clone())
     }
@@ -1299,6 +1315,7 @@ where
     ///
     /// See [`ListEndpointConfigs`](crate::client::fluent_builders::ListEndpointConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpointConfigs::into_paginator).
     pub fn list_endpoint_configs(&self) -> fluent_builders::ListEndpointConfigs<C, M, R> {
         fluent_builders::ListEndpointConfigs::new(self.handle.clone())
     }
@@ -1306,6 +1323,7 @@ where
     ///
     /// See [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
     pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints<C, M, R> {
         fluent_builders::ListEndpoints::new(self.handle.clone())
     }
@@ -1313,6 +1331,7 @@ where
     ///
     /// See [`ListExperiments`](crate::client::fluent_builders::ListExperiments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExperiments::into_paginator).
     pub fn list_experiments(&self) -> fluent_builders::ListExperiments<C, M, R> {
         fluent_builders::ListExperiments::new(self.handle.clone())
     }
@@ -1327,6 +1346,7 @@ where
     ///
     /// See [`ListFlowDefinitions`](crate::client::fluent_builders::ListFlowDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFlowDefinitions::into_paginator).
     pub fn list_flow_definitions(&self) -> fluent_builders::ListFlowDefinitions<C, M, R> {
         fluent_builders::ListFlowDefinitions::new(self.handle.clone())
     }
@@ -1334,6 +1354,7 @@ where
     ///
     /// See [`ListHumanTaskUis`](crate::client::fluent_builders::ListHumanTaskUis) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHumanTaskUis::into_paginator).
     pub fn list_human_task_uis(&self) -> fluent_builders::ListHumanTaskUis<C, M, R> {
         fluent_builders::ListHumanTaskUis::new(self.handle.clone())
     }
@@ -1341,6 +1362,7 @@ where
     ///
     /// See [`ListHyperParameterTuningJobs`](crate::client::fluent_builders::ListHyperParameterTuningJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHyperParameterTuningJobs::into_paginator).
     pub fn list_hyper_parameter_tuning_jobs(
         &self,
     ) -> fluent_builders::ListHyperParameterTuningJobs<C, M, R> {
@@ -1350,6 +1372,7 @@ where
     ///
     /// See [`ListImages`](crate::client::fluent_builders::ListImages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImages::into_paginator).
     pub fn list_images(&self) -> fluent_builders::ListImages<C, M, R> {
         fluent_builders::ListImages::new(self.handle.clone())
     }
@@ -1357,6 +1380,7 @@ where
     ///
     /// See [`ListImageVersions`](crate::client::fluent_builders::ListImageVersions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImageVersions::into_paginator).
     pub fn list_image_versions(&self) -> fluent_builders::ListImageVersions<C, M, R> {
         fluent_builders::ListImageVersions::new(self.handle.clone())
     }
@@ -1364,6 +1388,7 @@ where
     ///
     /// See [`ListInferenceRecommendationsJobs`](crate::client::fluent_builders::ListInferenceRecommendationsJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInferenceRecommendationsJobs::into_paginator).
     pub fn list_inference_recommendations_jobs(
         &self,
     ) -> fluent_builders::ListInferenceRecommendationsJobs<C, M, R> {
@@ -1373,6 +1398,7 @@ where
     ///
     /// See [`ListLabelingJobs`](crate::client::fluent_builders::ListLabelingJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobs::into_paginator).
     pub fn list_labeling_jobs(&self) -> fluent_builders::ListLabelingJobs<C, M, R> {
         fluent_builders::ListLabelingJobs::new(self.handle.clone())
     }
@@ -1380,6 +1406,7 @@ where
     ///
     /// See [`ListLabelingJobsForWorkteam`](crate::client::fluent_builders::ListLabelingJobsForWorkteam) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLabelingJobsForWorkteam::into_paginator).
     pub fn list_labeling_jobs_for_workteam(
         &self,
     ) -> fluent_builders::ListLabelingJobsForWorkteam<C, M, R> {
@@ -1389,6 +1416,7 @@ where
     ///
     /// See [`ListLineageGroups`](crate::client::fluent_builders::ListLineageGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLineageGroups::into_paginator).
     pub fn list_lineage_groups(&self) -> fluent_builders::ListLineageGroups<C, M, R> {
         fluent_builders::ListLineageGroups::new(self.handle.clone())
     }
@@ -1396,6 +1424,7 @@ where
     ///
     /// See [`ListModelBiasJobDefinitions`](crate::client::fluent_builders::ListModelBiasJobDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelBiasJobDefinitions::into_paginator).
     pub fn list_model_bias_job_definitions(
         &self,
     ) -> fluent_builders::ListModelBiasJobDefinitions<C, M, R> {
@@ -1405,6 +1434,7 @@ where
     ///
     /// See [`ListModelExplainabilityJobDefinitions`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelExplainabilityJobDefinitions::into_paginator).
     pub fn list_model_explainability_job_definitions(
         &self,
     ) -> fluent_builders::ListModelExplainabilityJobDefinitions<C, M, R> {
@@ -1414,6 +1444,7 @@ where
     ///
     /// See [`ListModelMetadata`](crate::client::fluent_builders::ListModelMetadata) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelMetadata::into_paginator).
     pub fn list_model_metadata(&self) -> fluent_builders::ListModelMetadata<C, M, R> {
         fluent_builders::ListModelMetadata::new(self.handle.clone())
     }
@@ -1421,6 +1452,7 @@ where
     ///
     /// See [`ListModelPackageGroups`](crate::client::fluent_builders::ListModelPackageGroups) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelPackageGroups::into_paginator).
     pub fn list_model_package_groups(&self) -> fluent_builders::ListModelPackageGroups<C, M, R> {
         fluent_builders::ListModelPackageGroups::new(self.handle.clone())
     }
@@ -1428,6 +1460,7 @@ where
     ///
     /// See [`ListModelPackages`](crate::client::fluent_builders::ListModelPackages) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelPackages::into_paginator).
     pub fn list_model_packages(&self) -> fluent_builders::ListModelPackages<C, M, R> {
         fluent_builders::ListModelPackages::new(self.handle.clone())
     }
@@ -1435,6 +1468,7 @@ where
     ///
     /// See [`ListModelQualityJobDefinitions`](crate::client::fluent_builders::ListModelQualityJobDefinitions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelQualityJobDefinitions::into_paginator).
     pub fn list_model_quality_job_definitions(
         &self,
     ) -> fluent_builders::ListModelQualityJobDefinitions<C, M, R> {
@@ -1444,6 +1478,7 @@ where
     ///
     /// See [`ListModels`](crate::client::fluent_builders::ListModels) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
     pub fn list_models(&self) -> fluent_builders::ListModels<C, M, R> {
         fluent_builders::ListModels::new(self.handle.clone())
     }
@@ -1451,6 +1486,7 @@ where
     ///
     /// See [`ListMonitoringExecutions`](crate::client::fluent_builders::ListMonitoringExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringExecutions::into_paginator).
     pub fn list_monitoring_executions(&self) -> fluent_builders::ListMonitoringExecutions<C, M, R> {
         fluent_builders::ListMonitoringExecutions::new(self.handle.clone())
     }
@@ -1458,6 +1494,7 @@ where
     ///
     /// See [`ListMonitoringSchedules`](crate::client::fluent_builders::ListMonitoringSchedules) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMonitoringSchedules::into_paginator).
     pub fn list_monitoring_schedules(&self) -> fluent_builders::ListMonitoringSchedules<C, M, R> {
         fluent_builders::ListMonitoringSchedules::new(self.handle.clone())
     }
@@ -1465,6 +1502,7 @@ where
     ///
     /// See [`ListNotebookInstanceLifecycleConfigs`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotebookInstanceLifecycleConfigs::into_paginator).
     pub fn list_notebook_instance_lifecycle_configs(
         &self,
     ) -> fluent_builders::ListNotebookInstanceLifecycleConfigs<C, M, R> {
@@ -1474,6 +1512,7 @@ where
     ///
     /// See [`ListNotebookInstances`](crate::client::fluent_builders::ListNotebookInstances) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotebookInstances::into_paginator).
     pub fn list_notebook_instances(&self) -> fluent_builders::ListNotebookInstances<C, M, R> {
         fluent_builders::ListNotebookInstances::new(self.handle.clone())
     }
@@ -1481,6 +1520,7 @@ where
     ///
     /// See [`ListPipelineExecutions`](crate::client::fluent_builders::ListPipelineExecutions) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutions::into_paginator).
     pub fn list_pipeline_executions(&self) -> fluent_builders::ListPipelineExecutions<C, M, R> {
         fluent_builders::ListPipelineExecutions::new(self.handle.clone())
     }
@@ -1488,6 +1528,7 @@ where
     ///
     /// See [`ListPipelineExecutionSteps`](crate::client::fluent_builders::ListPipelineExecutionSteps) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineExecutionSteps::into_paginator).
     pub fn list_pipeline_execution_steps(
         &self,
     ) -> fluent_builders::ListPipelineExecutionSteps<C, M, R> {
@@ -1497,6 +1538,7 @@ where
     ///
     /// See [`ListPipelineParametersForExecution`](crate::client::fluent_builders::ListPipelineParametersForExecution) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelineParametersForExecution::into_paginator).
     pub fn list_pipeline_parameters_for_execution(
         &self,
     ) -> fluent_builders::ListPipelineParametersForExecution<C, M, R> {
@@ -1506,6 +1548,7 @@ where
     ///
     /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
@@ -1513,6 +1556,7 @@ where
     ///
     /// See [`ListProcessingJobs`](crate::client::fluent_builders::ListProcessingJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProcessingJobs::into_paginator).
     pub fn list_processing_jobs(&self) -> fluent_builders::ListProcessingJobs<C, M, R> {
         fluent_builders::ListProcessingJobs::new(self.handle.clone())
     }
@@ -1520,6 +1564,7 @@ where
     ///
     /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
@@ -1527,6 +1572,7 @@ where
     ///
     /// See [`ListStudioLifecycleConfigs`](crate::client::fluent_builders::ListStudioLifecycleConfigs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudioLifecycleConfigs::into_paginator).
     pub fn list_studio_lifecycle_configs(
         &self,
     ) -> fluent_builders::ListStudioLifecycleConfigs<C, M, R> {
@@ -1536,6 +1582,7 @@ where
     ///
     /// See [`ListSubscribedWorkteams`](crate::client::fluent_builders::ListSubscribedWorkteams) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSubscribedWorkteams::into_paginator).
     pub fn list_subscribed_workteams(&self) -> fluent_builders::ListSubscribedWorkteams<C, M, R> {
         fluent_builders::ListSubscribedWorkteams::new(self.handle.clone())
     }
@@ -1543,6 +1590,7 @@ where
     ///
     /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
@@ -1550,6 +1598,7 @@ where
     ///
     /// See [`ListTrainingJobs`](crate::client::fluent_builders::ListTrainingJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrainingJobs::into_paginator).
     pub fn list_training_jobs(&self) -> fluent_builders::ListTrainingJobs<C, M, R> {
         fluent_builders::ListTrainingJobs::new(self.handle.clone())
     }
@@ -1557,6 +1606,7 @@ where
     ///
     /// See [`ListTrainingJobsForHyperParameterTuningJob`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrainingJobsForHyperParameterTuningJob::into_paginator).
     pub fn list_training_jobs_for_hyper_parameter_tuning_job(
         &self,
     ) -> fluent_builders::ListTrainingJobsForHyperParameterTuningJob<C, M, R> {
@@ -1566,6 +1616,7 @@ where
     ///
     /// See [`ListTransformJobs`](crate::client::fluent_builders::ListTransformJobs) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTransformJobs::into_paginator).
     pub fn list_transform_jobs(&self) -> fluent_builders::ListTransformJobs<C, M, R> {
         fluent_builders::ListTransformJobs::new(self.handle.clone())
     }
@@ -1573,6 +1624,7 @@ where
     ///
     /// See [`ListTrialComponents`](crate::client::fluent_builders::ListTrialComponents) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrialComponents::into_paginator).
     pub fn list_trial_components(&self) -> fluent_builders::ListTrialComponents<C, M, R> {
         fluent_builders::ListTrialComponents::new(self.handle.clone())
     }
@@ -1580,6 +1632,7 @@ where
     ///
     /// See [`ListTrials`](crate::client::fluent_builders::ListTrials) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrials::into_paginator).
     pub fn list_trials(&self) -> fluent_builders::ListTrials<C, M, R> {
         fluent_builders::ListTrials::new(self.handle.clone())
     }
@@ -1587,6 +1640,7 @@ where
     ///
     /// See [`ListUserProfiles`](crate::client::fluent_builders::ListUserProfiles) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserProfiles::into_paginator).
     pub fn list_user_profiles(&self) -> fluent_builders::ListUserProfiles<C, M, R> {
         fluent_builders::ListUserProfiles::new(self.handle.clone())
     }
@@ -1594,6 +1648,7 @@ where
     ///
     /// See [`ListWorkforces`](crate::client::fluent_builders::ListWorkforces) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkforces::into_paginator).
     pub fn list_workforces(&self) -> fluent_builders::ListWorkforces<C, M, R> {
         fluent_builders::ListWorkforces::new(self.handle.clone())
     }
@@ -1601,6 +1656,7 @@ where
     ///
     /// See [`ListWorkteams`](crate::client::fluent_builders::ListWorkteams) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkteams::into_paginator).
     pub fn list_workteams(&self) -> fluent_builders::ListWorkteams<C, M, R> {
         fluent_builders::ListWorkteams::new(self.handle.clone())
     }
@@ -1617,6 +1673,7 @@ where
     ///
     /// See [`QueryLineage`](crate::client::fluent_builders::QueryLineage) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryLineage::into_paginator).
     pub fn query_lineage(&self) -> fluent_builders::QueryLineage<C, M, R> {
         fluent_builders::QueryLineage::new(self.handle.clone())
     }
@@ -1645,6 +1702,7 @@ where
     ///
     /// See [`Search`](crate::client::fluent_builders::Search) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::Search::into_paginator).
     pub fn search(&self) -> fluent_builders::Search<C, M, R> {
         fluent_builders::Search::new(self.handle.clone())
     }
@@ -2011,10 +2069,10 @@ pub mod fluent_builders {
                 crate::input::AddAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2124,10 +2182,10 @@ pub mod fluent_builders {
                 crate::input::AddTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2211,10 +2269,10 @@ pub mod fluent_builders {
                 crate::input::AssociateTrialComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2294,10 +2352,10 @@ pub mod fluent_builders {
                 crate::input::BatchDescribeModelPackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2371,10 +2429,10 @@ pub mod fluent_builders {
                 crate::input::CreateActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2540,10 +2598,10 @@ pub mod fluent_builders {
                 crate::input::CreateAlgorithmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2729,10 +2787,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2862,10 +2920,10 @@ pub mod fluent_builders {
                 crate::input::CreateAppImageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -2968,10 +3026,10 @@ pub mod fluent_builders {
                 crate::input::CreateArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3122,10 +3180,10 @@ pub mod fluent_builders {
                 crate::input::CreateAutoMlJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3318,10 +3376,10 @@ pub mod fluent_builders {
                 crate::input::CreateCodeRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3431,10 +3489,10 @@ pub mod fluent_builders {
                 crate::input::CreateCompilationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3612,10 +3670,10 @@ pub mod fluent_builders {
                 crate::input::CreateContextInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3755,10 +3813,10 @@ pub mod fluent_builders {
                 crate::input::CreateDataQualityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -3958,10 +4016,10 @@ pub mod fluent_builders {
                 crate::input::CreateDeviceFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4105,10 +4163,10 @@ pub mod fluent_builders {
                 crate::input::CreateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4325,10 +4383,10 @@ pub mod fluent_builders {
                 crate::input::CreateEdgePackagingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4500,10 +4558,10 @@ pub mod fluent_builders {
                 crate::input::CreateEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4622,10 +4680,10 @@ pub mod fluent_builders {
                 crate::input::CreateEndpointConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4794,10 +4852,10 @@ pub mod fluent_builders {
                 crate::input::CreateExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -4907,10 +4965,10 @@ pub mod fluent_builders {
                 crate::input::CreateFeatureGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5141,10 +5199,10 @@ pub mod fluent_builders {
                 crate::input::CreateFlowDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5299,10 +5357,10 @@ pub mod fluent_builders {
                 crate::input::CreateHumanTaskUiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5402,10 +5460,10 @@ pub mod fluent_builders {
                 crate::input::CreateHyperParameterTuningJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5573,10 +5631,10 @@ pub mod fluent_builders {
                 crate::input::CreateImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5690,10 +5748,10 @@ pub mod fluent_builders {
                 crate::input::CreateImageVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5796,10 +5854,10 @@ pub mod fluent_builders {
                 crate::input::CreateInferenceRecommendationsJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -5958,10 +6016,10 @@ pub mod fluent_builders {
                 crate::input::CreateLabelingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6236,10 +6294,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6409,10 +6467,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelBiasJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6614,10 +6672,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelExplainabilityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -6827,10 +6885,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelPackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7161,10 +7219,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelPackageGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7267,10 +7325,10 @@ pub mod fluent_builders {
                 crate::input::CreateModelQualityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7473,10 +7531,10 @@ pub mod fluent_builders {
                 crate::input::CreateMonitoringScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7590,10 +7648,10 @@ pub mod fluent_builders {
                 crate::input::CreateNotebookInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7874,10 +7932,10 @@ pub mod fluent_builders {
                 crate::input::CreateNotebookInstanceLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -7988,10 +8046,10 @@ pub mod fluent_builders {
                 crate::input::CreatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8144,10 +8202,10 @@ pub mod fluent_builders {
                 crate::input::CreatePresignedDomainUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8256,10 +8314,10 @@ pub mod fluent_builders {
                 crate::input::CreatePresignedNotebookInstanceUrlInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8342,10 +8400,10 @@ pub mod fluent_builders {
                 crate::input::CreateProcessingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8576,10 +8634,10 @@ pub mod fluent_builders {
                 crate::input::CreateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8692,10 +8750,10 @@ pub mod fluent_builders {
                 crate::input::CreateStudioLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -8832,10 +8890,10 @@ pub mod fluent_builders {
                 crate::input::CreateTrainingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9260,10 +9318,10 @@ pub mod fluent_builders {
                 crate::input::CreateTransformJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9515,10 +9573,10 @@ pub mod fluent_builders {
                 crate::input::CreateTrialInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9641,10 +9699,10 @@ pub mod fluent_builders {
                 crate::input::CreateTrialComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -9881,10 +9939,10 @@ pub mod fluent_builders {
                 crate::input::CreateUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10028,10 +10086,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkforceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10162,10 +10220,10 @@ pub mod fluent_builders {
                 crate::input::CreateWorkteamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10316,10 +10374,10 @@ pub mod fluent_builders {
                 crate::input::DeleteActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10386,10 +10444,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAlgorithmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10459,10 +10517,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10562,10 +10620,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAppImageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10635,10 +10693,10 @@ pub mod fluent_builders {
                 crate::input::DeleteArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10718,10 +10776,10 @@ pub mod fluent_builders {
                 crate::input::DeleteAssociationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10801,10 +10859,10 @@ pub mod fluent_builders {
                 crate::input::DeleteCodeRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10874,10 +10932,10 @@ pub mod fluent_builders {
                 crate::input::DeleteContextInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -10944,10 +11002,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDataQualityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11017,10 +11075,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDeviceFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11090,10 +11148,10 @@ pub mod fluent_builders {
                 crate::input::DeleteDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11174,10 +11232,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11248,10 +11306,10 @@ pub mod fluent_builders {
                 crate::input::DeleteEndpointConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11321,10 +11379,10 @@ pub mod fluent_builders {
                 crate::input::DeleteExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11395,10 +11453,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFeatureGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11468,10 +11526,10 @@ pub mod fluent_builders {
                 crate::input::DeleteFlowDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11542,10 +11600,10 @@ pub mod fluent_builders {
                 crate::input::DeleteHumanTaskUiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11615,10 +11673,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11685,10 +11743,10 @@ pub mod fluent_builders {
                 crate::input::DeleteImageVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11765,10 +11823,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11835,10 +11893,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelBiasJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11910,10 +11968,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelExplainabilityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -11984,10 +12042,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelPackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12059,10 +12117,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelPackageGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12132,10 +12190,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelPackageGroupPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12205,10 +12263,10 @@ pub mod fluent_builders {
                 crate::input::DeleteModelQualityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12278,10 +12336,10 @@ pub mod fluent_builders {
                 crate::input::DeleteMonitoringScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12353,10 +12411,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNotebookInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12428,10 +12486,10 @@ pub mod fluent_builders {
                 crate::input::DeleteNotebookInstanceLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12508,10 +12566,10 @@ pub mod fluent_builders {
                 crate::input::DeletePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12594,10 +12652,10 @@ pub mod fluent_builders {
                 crate::input::DeleteProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12664,10 +12722,10 @@ pub mod fluent_builders {
                 crate::input::DeleteStudioLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12745,10 +12803,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12832,10 +12890,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTrialInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12902,10 +12960,10 @@ pub mod fluent_builders {
                 crate::input::DeleteTrialComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -12975,10 +13033,10 @@ pub mod fluent_builders {
                 crate::input::DeleteUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13061,10 +13119,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkforceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13134,10 +13192,10 @@ pub mod fluent_builders {
                 crate::input::DeleteWorkteamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13207,10 +13265,10 @@ pub mod fluent_builders {
                 crate::input::DeregisterDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13297,10 +13355,10 @@ pub mod fluent_builders {
                 crate::input::DescribeActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13367,10 +13425,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAlgorithmInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13440,10 +13498,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13543,10 +13601,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAppImageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13616,10 +13674,10 @@ pub mod fluent_builders {
                 crate::input::DescribeArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13686,10 +13744,10 @@ pub mod fluent_builders {
                 crate::input::DescribeAutoMlJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13759,10 +13817,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCodeRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13833,10 +13891,10 @@ pub mod fluent_builders {
                 crate::input::DescribeCompilationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13906,10 +13964,10 @@ pub mod fluent_builders {
                 crate::input::DescribeContextInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -13976,10 +14034,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDataQualityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14049,10 +14107,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeviceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14142,10 +14200,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDeviceFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14215,10 +14273,10 @@ pub mod fluent_builders {
                 crate::input::DescribeDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14285,10 +14343,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEdgePackagingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14358,10 +14416,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14431,10 +14489,10 @@ pub mod fluent_builders {
                 crate::input::DescribeEndpointConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14504,10 +14562,10 @@ pub mod fluent_builders {
                 crate::input::DescribeExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14577,10 +14635,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFeatureGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14660,10 +14718,10 @@ pub mod fluent_builders {
                 crate::input::DescribeFlowDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14733,10 +14791,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHumanTaskUiInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14806,10 +14864,10 @@ pub mod fluent_builders {
                 crate::input::DescribeHyperParameterTuningJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14882,10 +14940,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -14952,10 +15010,10 @@ pub mod fluent_builders {
                 crate::input::DescribeImageVersionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15034,10 +15092,10 @@ pub mod fluent_builders {
                 crate::input::DescribeInferenceRecommendationsJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15104,10 +15162,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLabelingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15177,10 +15235,10 @@ pub mod fluent_builders {
                 crate::input::DescribeLineageGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15250,10 +15308,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15320,10 +15378,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelBiasJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15395,10 +15453,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelExplainabilityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15469,10 +15527,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelPackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15544,10 +15602,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelPackageGroupInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15617,10 +15675,10 @@ pub mod fluent_builders {
                 crate::input::DescribeModelQualityJobDefinitionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15690,10 +15748,10 @@ pub mod fluent_builders {
                 crate::input::DescribeMonitoringScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15763,10 +15821,10 @@ pub mod fluent_builders {
                 crate::input::DescribeNotebookInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15839,10 +15897,10 @@ pub mod fluent_builders {
                 crate::input::DescribeNotebookInstanceLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15919,10 +15977,10 @@ pub mod fluent_builders {
                 crate::input::DescribePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -15994,10 +16052,10 @@ pub mod fluent_builders {
                 crate::input::DescribePipelineDefinitionForExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16067,10 +16125,10 @@ pub mod fluent_builders {
                 crate::input::DescribePipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16140,10 +16198,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProcessingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16213,10 +16271,10 @@ pub mod fluent_builders {
                 crate::input::DescribeProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16283,10 +16341,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStudioLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16359,10 +16417,10 @@ pub mod fluent_builders {
                 crate::input::DescribeSubscribedWorkteamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16430,10 +16488,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTrainingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16503,10 +16561,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTransformJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16576,10 +16634,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTrialInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16646,10 +16704,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTrialComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16719,10 +16777,10 @@ pub mod fluent_builders {
                 crate::input::DescribeUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16804,10 +16862,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkforceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16877,10 +16935,10 @@ pub mod fluent_builders {
                 crate::input::DescribeWorkteamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -16952,10 +17010,10 @@ pub mod fluent_builders {
                 crate::input::DisableSagemakerServicecatalogPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17013,10 +17071,10 @@ pub mod fluent_builders {
                 crate::input::DisassociateTrialComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17098,10 +17156,10 @@ pub mod fluent_builders {
                 crate::input::EnableSagemakerServicecatalogPortfolioInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17158,10 +17216,10 @@ pub mod fluent_builders {
                 crate::input::GetDeviceFleetReportInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17231,10 +17289,10 @@ pub mod fluent_builders {
                 crate::input::GetLineageGroupPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17304,10 +17362,10 @@ pub mod fluent_builders {
                 crate::input::GetModelPackageGroupPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17379,10 +17437,10 @@ pub mod fluent_builders {
                 crate::input::GetSagemakerServicecatalogPortfolioStatusInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17439,10 +17497,10 @@ pub mod fluent_builders {
                 crate::input::GetSearchSuggestionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -17525,16 +17583,22 @@ pub mod fluent_builders {
                 crate::input::ListActionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListActionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListActionsPaginator<C, M, R> {
+            crate::paginator::ListActionsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only actions with the specified source URI.</p>
         pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -17677,16 +17741,22 @@ pub mod fluent_builders {
                 crate::input::ListAlgorithmsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAlgorithmsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAlgorithmsPaginator<C, M, R> {
+            crate::paginator::ListAlgorithmsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -17822,16 +17892,22 @@ pub mod fluent_builders {
                 crate::input::ListAppImageConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppImageConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppImageConfigsPaginator<C, M, R> {
+            crate::paginator::ListAppImageConfigsPaginator::new(self.handle, self.inner)
         }
         /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -17993,16 +18069,22 @@ pub mod fluent_builders {
                 crate::input::ListAppsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAppsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAppsPaginator<C, M, R> {
+            crate::paginator::ListAppsPaginator::new(self.handle, self.inner)
         }
         /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18122,16 +18204,22 @@ pub mod fluent_builders {
                 crate::input::ListArtifactsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListArtifactsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListArtifactsPaginator<C, M, R> {
+            crate::paginator::ListArtifactsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only artifacts with the specified source URI.</p>
         pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18277,16 +18365,22 @@ pub mod fluent_builders {
                 crate::input::ListAssociationsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAssociationsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAssociationsPaginator<C, M, R> {
+            crate::paginator::ListAssociationsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only associations with the specified source ARN.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18468,16 +18562,22 @@ pub mod fluent_builders {
                 crate::input::ListAutoMlJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListAutoMlJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListAutoMlJobsPaginator<C, M, R> {
+            crate::paginator::ListAutoMlJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -18652,16 +18752,24 @@ pub mod fluent_builders {
                 crate::input::ListCandidatesForAutoMlJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCandidatesForAutoMlJobPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListCandidatesForAutoMlJobPaginator<C, M, R> {
+            crate::paginator::ListCandidatesForAutoMlJobPaginator::new(self.handle, self.inner)
         }
         /// <p>List the candidates created for the job by providing the job's name.</p>
         pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18797,16 +18905,22 @@ pub mod fluent_builders {
                 crate::input::ListCodeRepositoriesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCodeRepositoriesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCodeRepositoriesPaginator<C, M, R> {
+            crate::paginator::ListCodeRepositoriesPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -18969,16 +19083,22 @@ pub mod fluent_builders {
                 crate::input::ListCompilationJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListCompilationJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListCompilationJobsPaginator<C, M, R> {
+            crate::paginator::ListCompilationJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19153,16 +19273,22 @@ pub mod fluent_builders {
                 crate::input::ListContextsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListContextsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListContextsPaginator<C, M, R> {
+            crate::paginator::ListContextsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only contexts with the specified source URI.</p>
         pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19305,16 +19431,24 @@ pub mod fluent_builders {
                 crate::input::ListDataQualityJobDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDataQualityJobDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListDataQualityJobDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListDataQualityJobDefinitionsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19463,16 +19597,22 @@ pub mod fluent_builders {
                 crate::input::ListDeviceFleetsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDeviceFleetsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDeviceFleetsPaginator<C, M, R> {
+            crate::paginator::ListDeviceFleetsPaginator::new(self.handle, self.inner)
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19634,16 +19774,22 @@ pub mod fluent_builders {
                 crate::input::ListDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDevicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDevicesPaginator<C, M, R> {
+            crate::paginator::ListDevicesPaginator::new(self.handle, self.inner)
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19750,16 +19896,22 @@ pub mod fluent_builders {
                 crate::input::ListDomainsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDomainsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDomainsPaginator<C, M, R> {
+            crate::paginator::ListDomainsPaginator::new(self.handle, self.inner)
         }
         /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19830,16 +19982,22 @@ pub mod fluent_builders {
                 crate::input::ListEdgePackagingJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEdgePackagingJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEdgePackagingJobsPaginator<C, M, R> {
+            crate::paginator::ListEdgePackagingJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -20027,16 +20185,22 @@ pub mod fluent_builders {
                 crate::input::ListEndpointConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEndpointConfigsPaginator<C, M, R> {
+            crate::paginator::ListEndpointConfigsPaginator::new(self.handle, self.inner)
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::EndpointConfigSortKey) -> Self {
@@ -20172,16 +20336,22 @@ pub mod fluent_builders {
                 crate::input::ListEndpointsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListEndpointsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListEndpointsPaginator<C, M, R> {
+            crate::paginator::ListEndpointsPaginator::new(self.handle, self.inner)
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::EndpointSortKey) -> Self {
@@ -20356,16 +20526,22 @@ pub mod fluent_builders {
                 crate::input::ListExperimentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListExperimentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListExperimentsPaginator<C, M, R> {
+            crate::paginator::ListExperimentsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only experiments created after the specified time.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -20488,10 +20664,10 @@ pub mod fluent_builders {
                 crate::input::ListFeatureGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -20665,16 +20841,22 @@ pub mod fluent_builders {
                 crate::input::ListFlowDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListFlowDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListFlowDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListFlowDefinitionsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -20784,16 +20966,22 @@ pub mod fluent_builders {
                 crate::input::ListHumanTaskUisInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHumanTaskUisPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListHumanTaskUisPaginator<C, M, R> {
+            crate::paginator::ListHumanTaskUisPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -20903,16 +21091,24 @@ pub mod fluent_builders {
                 crate::input::ListHyperParameterTuningJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListHyperParameterTuningJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListHyperParameterTuningJobsPaginator<C, M, R> {
+            crate::paginator::ListHyperParameterTuningJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -21090,16 +21286,22 @@ pub mod fluent_builders {
                 crate::input::ListImagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImagesPaginator<C, M, R> {
+            crate::paginator::ListImagesPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only images created on or after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -21261,16 +21463,22 @@ pub mod fluent_builders {
                 crate::input::ListImageVersionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListImageVersionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListImageVersionsPaginator<C, M, R> {
+            crate::paginator::ListImageVersionsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only versions created on or after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -21429,16 +21637,27 @@ pub mod fluent_builders {
                 crate::input::ListInferenceRecommendationsJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListInferenceRecommendationsJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListInferenceRecommendationsJobsPaginator<C, M, R> {
+            crate::paginator::ListInferenceRecommendationsJobsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -21616,16 +21835,22 @@ pub mod fluent_builders {
                 crate::input::ListLabelingJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLabelingJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLabelingJobsPaginator<C, M, R> {
+            crate::paginator::ListLabelingJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -21797,16 +22022,24 @@ pub mod fluent_builders {
                 crate::input::ListLabelingJobsForWorkteamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLabelingJobsForWorkteamPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListLabelingJobsForWorkteamPaginator<C, M, R> {
+            crate::paginator::ListLabelingJobsForWorkteamPaginator::new(self.handle, self.inner)
         }
         /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
         pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -21958,16 +22191,22 @@ pub mod fluent_builders {
                 crate::input::ListLineageGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListLineageGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListLineageGroupsPaginator<C, M, R> {
+            crate::paginator::ListLineageGroupsPaginator::new(self.handle, self.inner)
         }
         /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -22090,16 +22329,24 @@ pub mod fluent_builders {
                 crate::input::ListModelBiasJobDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelBiasJobDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListModelBiasJobDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListModelBiasJobDefinitionsPaginator::new(self.handle, self.inner)
         }
         /// <p>Name of the endpoint to monitor for model bias.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -22250,16 +22497,27 @@ pub mod fluent_builders {
                 crate::input::ListModelExplainabilityJobDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelExplainabilityJobDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListModelExplainabilityJobDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListModelExplainabilityJobDefinitionsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>Name of the endpoint to monitor for model explainability.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -22408,16 +22666,22 @@ pub mod fluent_builders {
                 crate::input::ListModelMetadataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelMetadataPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelMetadataPaginator<C, M, R> {
+            crate::paginator::ListModelMetadataPaginator::new(self.handle, self.inner)
         }
         /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
         pub fn search_expression(
@@ -22504,16 +22768,22 @@ pub mod fluent_builders {
                 crate::input::ListModelPackageGroupsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelPackageGroupsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelPackageGroupsPaginator<C, M, R> {
+            crate::paginator::ListModelPackageGroupsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only model groups created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -22649,16 +22919,22 @@ pub mod fluent_builders {
                 crate::input::ListModelPackagesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelPackagesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelPackagesPaginator<C, M, R> {
+            crate::paginator::ListModelPackagesPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -22843,16 +23119,24 @@ pub mod fluent_builders {
                 crate::input::ListModelQualityJobDefinitionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelQualityJobDefinitionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListModelQualityJobDefinitionsPaginator<C, M, R> {
+            crate::paginator::ListModelQualityJobDefinitionsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -23001,16 +23285,22 @@ pub mod fluent_builders {
                 crate::input::ListModelsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListModelsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListModelsPaginator<C, M, R> {
+            crate::paginator::ListModelsPaginator::new(self.handle, self.inner)
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::ModelSortKey) -> Self {
@@ -23146,16 +23436,24 @@ pub mod fluent_builders {
                 crate::input::ListMonitoringExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitoringExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListMonitoringExecutionsPaginator<C, M, R> {
+            crate::paginator::ListMonitoringExecutionsPaginator::new(self.handle, self.inner)
         }
         /// <p>Name of a specific schedule to fetch jobs for.</p>
         pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -23398,16 +23696,22 @@ pub mod fluent_builders {
                 crate::input::ListMonitoringSchedulesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListMonitoringSchedulesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListMonitoringSchedulesPaginator<C, M, R> {
+            crate::paginator::ListMonitoringSchedulesPaginator::new(self.handle, self.inner)
         }
         /// <p>Name of a specific endpoint to fetch schedules for.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -23626,16 +23930,27 @@ pub mod fluent_builders {
                 crate::input::ListNotebookInstanceLifecycleConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNotebookInstanceLifecycleConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListNotebookInstanceLifecycleConfigsPaginator<C, M, R> {
+            crate::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -23803,16 +24118,22 @@ pub mod fluent_builders {
                 crate::input::ListNotebookInstancesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListNotebookInstancesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListNotebookInstancesPaginator<C, M, R> {
+            crate::paginator::ListNotebookInstancesPaginator::new(self.handle, self.inner)
         }
         /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
         /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
@@ -24043,16 +24364,22 @@ pub mod fluent_builders {
                 crate::input::ListPipelineExecutionsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelineExecutionsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelineExecutionsPaginator<C, M, R> {
+            crate::paginator::ListPipelineExecutionsPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the pipeline.</p>
         pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -24188,16 +24515,24 @@ pub mod fluent_builders {
                 crate::input::ListPipelineExecutionStepsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelineExecutionStepsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPipelineExecutionStepsPaginator<C, M, R> {
+            crate::paginator::ListPipelineExecutionStepsPaginator::new(self.handle, self.inner)
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
         pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -24296,16 +24631,27 @@ pub mod fluent_builders {
                 crate::input::ListPipelineParametersForExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelineParametersForExecutionPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListPipelineParametersForExecutionPaginator<C, M, R> {
+            crate::paginator::ListPipelineParametersForExecutionPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
         pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -24389,16 +24735,22 @@ pub mod fluent_builders {
                 crate::input::ListPipelinesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListPipelinesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListPipelinesPaginator<C, M, R> {
+            crate::paginator::ListPipelinesPaginator::new(self.handle, self.inner)
         }
         /// <p>The prefix of the pipeline name.</p>
         pub fn pipeline_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -24534,16 +24886,22 @@ pub mod fluent_builders {
                 crate::input::ListProcessingJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProcessingJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProcessingJobsPaginator<C, M, R> {
+            crate::paginator::ListProcessingJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -24715,16 +25073,22 @@ pub mod fluent_builders {
                 crate::input::ListProjectsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListProjectsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListProjectsPaginator<C, M, R> {
+            crate::paginator::ListProjectsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns the projects that were created after a specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -24860,16 +25224,24 @@ pub mod fluent_builders {
                 crate::input::ListStudioLifecycleConfigsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStudioLifecycleConfigsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListStudioLifecycleConfigsPaginator<C, M, R> {
+            crate::paginator::ListStudioLifecycleConfigsPaginator::new(self.handle, self.inner)
         }
         /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -25047,16 +25419,22 @@ pub mod fluent_builders {
                 crate::input::ListSubscribedWorkteamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSubscribedWorkteamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSubscribedWorkteamsPaginator<C, M, R> {
+            crate::paginator::ListSubscribedWorkteamsPaginator::new(self.handle, self.inner)
         }
         /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -25140,16 +25518,22 @@ pub mod fluent_builders {
                 crate::input::ListTagsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTagsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTagsPaginator<C, M, R> {
+            crate::paginator::ListTagsPaginator::new(self.handle, self.inner)
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -25237,16 +25621,22 @@ pub mod fluent_builders {
                 crate::input::ListTrainingJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrainingJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTrainingJobsPaginator<C, M, R> {
+            crate::paginator::ListTrainingJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -25420,16 +25810,28 @@ pub mod fluent_builders {
                 crate::input::ListTrainingJobsForHyperParameterTuningJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator<C, M, R>
+        {
+            crate::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>The name of the tuning job whose training jobs you want to list.</p>
         pub fn hyper_parameter_tuning_job_name(
@@ -25557,16 +25959,22 @@ pub mod fluent_builders {
                 crate::input::ListTransformJobsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTransformJobsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTransformJobsPaginator<C, M, R> {
+            crate::paginator::ListTransformJobsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only transform jobs created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -25743,16 +26151,22 @@ pub mod fluent_builders {
                 crate::input::ListTrialComponentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrialComponentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTrialComponentsPaginator<C, M, R> {
+            crate::paginator::ListTrialComponentsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
         pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -25908,16 +26322,22 @@ pub mod fluent_builders {
                 crate::input::ListTrialsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTrialsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTrialsPaginator<C, M, R> {
+            crate::paginator::ListTrialsPaginator::new(self.handle, self.inner)
         }
         /// <p>A filter that returns only trials that are part of the specified experiment.</p>
         pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -26066,16 +26486,22 @@ pub mod fluent_builders {
                 crate::input::ListUserProfilesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListUserProfilesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListUserProfilesPaginator<C, M, R> {
+            crate::paginator::ListUserProfilesPaginator::new(self.handle, self.inner)
         }
         /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -26198,16 +26624,22 @@ pub mod fluent_builders {
                 crate::input::ListWorkforcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkforcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkforcesPaginator<C, M, R> {
+            crate::paginator::ListWorkforcesPaginator::new(self.handle, self.inner)
         }
         /// <p>Sort workforces using the workforce name or creation date.</p>
         pub fn sort_by(mut self, input: crate::model::ListWorkforcesSortByOptions) -> Self {
@@ -26317,16 +26749,22 @@ pub mod fluent_builders {
                 crate::input::ListWorkteamsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListWorkteamsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListWorkteamsPaginator<C, M, R> {
+            crate::paginator::ListWorkteamsPaginator::new(self.handle, self.inner)
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::ListWorkteamsSortByOptions) -> Self {
@@ -26436,10 +26874,10 @@ pub mod fluent_builders {
                 crate::input::PutModelPackageGroupPolicyInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -26522,16 +26960,22 @@ pub mod fluent_builders {
                 crate::input::QueryLineageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::QueryLineagePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::QueryLineagePaginator<C, M, R> {
+            crate::paginator::QueryLineagePaginator::new(self.handle, self.inner)
         }
         /// Appends an item to `StartArns`.
         ///
@@ -26679,10 +27123,10 @@ pub mod fluent_builders {
                 crate::input::RegisterDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -26786,10 +27230,10 @@ pub mod fluent_builders {
                 crate::input::RenderUiTemplateInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -26897,10 +27341,10 @@ pub mod fluent_builders {
                 crate::input::RetryPipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -26984,16 +27428,22 @@ pub mod fluent_builders {
                 crate::input::SearchInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::SearchPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::SearchPaginator<C, M, R> {
+            crate::paginator::SearchPaginator::new(self.handle, self.inner)
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
         pub fn resource(mut self, input: crate::model::ResourceType) -> Self {
@@ -27113,10 +27563,10 @@ pub mod fluent_builders {
                 crate::input::SendPipelineExecutionStepFailureInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27212,10 +27662,10 @@ pub mod fluent_builders {
                 crate::input::SendPipelineExecutionStepSuccessInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27317,10 +27767,10 @@ pub mod fluent_builders {
                 crate::input::StartMonitoringScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27390,10 +27840,10 @@ pub mod fluent_builders {
                 crate::input::StartNotebookInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27463,10 +27913,10 @@ pub mod fluent_builders {
                 crate::input::StartPipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27598,10 +28048,10 @@ pub mod fluent_builders {
                 crate::input::StopAutoMlJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27673,10 +28123,10 @@ pub mod fluent_builders {
                 crate::input::StopCompilationJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27746,10 +28196,10 @@ pub mod fluent_builders {
                 crate::input::StopEdgePackagingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27820,10 +28270,10 @@ pub mod fluent_builders {
                 crate::input::StopHyperParameterTuningJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27896,10 +28346,10 @@ pub mod fluent_builders {
                 crate::input::StopInferenceRecommendationsJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -27966,10 +28416,10 @@ pub mod fluent_builders {
                 crate::input::StopLabelingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28039,10 +28489,10 @@ pub mod fluent_builders {
                 crate::input::StopMonitoringScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28113,10 +28563,10 @@ pub mod fluent_builders {
                 crate::input::StopNotebookInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28192,10 +28642,10 @@ pub mod fluent_builders {
                 crate::input::StopPipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28278,10 +28728,10 @@ pub mod fluent_builders {
                 crate::input::StopProcessingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28352,10 +28802,10 @@ pub mod fluent_builders {
                 crate::input::StopTrainingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28426,10 +28876,10 @@ pub mod fluent_builders {
                 crate::input::StopTransformJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28499,10 +28949,10 @@ pub mod fluent_builders {
                 crate::input::UpdateActionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28632,10 +29082,10 @@ pub mod fluent_builders {
                 crate::input::UpdateAppImageConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28721,10 +29171,10 @@ pub mod fluent_builders {
                 crate::input::UpdateArtifactInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28844,10 +29294,10 @@ pub mod fluent_builders {
                 crate::input::UpdateCodeRepositoryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -28932,10 +29382,10 @@ pub mod fluent_builders {
                 crate::input::UpdateContextInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29052,10 +29502,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDeviceFleetInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29170,10 +29620,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDevicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29260,10 +29710,10 @@ pub mod fluent_builders {
                 crate::input::UpdateDomainInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29363,10 +29813,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEndpointInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29507,10 +29957,10 @@ pub mod fluent_builders {
                 crate::input::UpdateEndpointWeightsAndCapacitiesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29600,10 +30050,10 @@ pub mod fluent_builders {
                 crate::input::UpdateExperimentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29693,10 +30143,10 @@ pub mod fluent_builders {
                 crate::input::UpdateImageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29810,10 +30260,10 @@ pub mod fluent_builders {
                 crate::input::UpdateModelPackageInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -29978,10 +30428,10 @@ pub mod fluent_builders {
                 crate::input::UpdateMonitoringScheduleInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30067,10 +30517,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNotebookInstanceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30318,10 +30768,10 @@ pub mod fluent_builders {
                 crate::input::UpdateNotebookInstanceLifecycleConfigInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30432,10 +30882,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30554,10 +31004,10 @@ pub mod fluent_builders {
                 crate::input::UpdatePipelineExecutionInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30661,10 +31111,10 @@ pub mod fluent_builders {
                 crate::input::UpdateProjectInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30781,10 +31231,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTrainingJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30887,10 +31337,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTrialInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -30967,10 +31417,10 @@ pub mod fluent_builders {
                 crate::input::UpdateTrialComponentInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -31218,10 +31668,10 @@ pub mod fluent_builders {
                 crate::input::UpdateUserProfileInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -31321,10 +31771,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkforceInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -31422,10 +31872,10 @@ pub mod fluent_builders {
                 crate::input::UpdateWorkteamInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -31497,6 +31947,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

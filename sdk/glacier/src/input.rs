@@ -65,7 +65,7 @@ impl AbortMultipartUploadInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -271,7 +271,7 @@ impl AbortVaultLockInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -490,7 +490,7 @@ impl AddTagsToVaultInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -740,7 +740,7 @@ impl CompleteMultipartUploadInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -998,7 +998,7 @@ impl CompleteVaultLockInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -1204,7 +1204,7 @@ impl CreateVaultInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -1406,7 +1406,7 @@ impl DeleteArchiveInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -1612,7 +1612,7 @@ impl DeleteVaultInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -1803,7 +1803,7 @@ impl DeleteVaultAccessPolicyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -1994,7 +1994,7 @@ impl DeleteVaultNotificationsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -2196,7 +2196,7 @@ impl DescribeJobInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -2402,7 +2402,7 @@ impl DescribeVaultInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -2580,7 +2580,7 @@ impl GetDataRetrievalPolicyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -2792,7 +2792,7 @@ impl GetJobOutputInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3022,7 +3022,7 @@ impl GetVaultAccessPolicyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3212,7 +3212,7 @@ impl GetVaultLockInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3402,7 +3402,7 @@ impl GetVaultNotificationsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3607,7 +3607,7 @@ impl InitiateJobInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -3840,7 +3840,7 @@ impl InitiateMultipartUploadInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4085,7 +4085,7 @@ impl InitiateVaultLockInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4334,7 +4334,7 @@ impl ListJobsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4568,7 +4568,7 @@ impl ListMultipartUploadsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -4809,7 +4809,7 @@ impl ListPartsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5019,7 +5019,7 @@ impl ListProvisionedCapacityInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5193,7 +5193,7 @@ impl ListTagsForVaultInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5395,7 +5395,7 @@ impl ListVaultsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5571,7 +5571,7 @@ impl PurchaseProvisionedCapacityInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5766,7 +5766,7 @@ impl RemoveTagsFromVaultInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -5984,7 +5984,7 @@ impl SetDataRetrievalPolicyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -6189,7 +6189,7 @@ impl SetVaultAccessPolicyInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<
@@ -6411,7 +6411,7 @@ impl SetVaultNotificationsInput {
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
     pub async fn make_operation(
-        mut self,
+        &mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         aws_smithy_http::operation::Operation<

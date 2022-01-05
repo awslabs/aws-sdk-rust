@@ -71,6 +71,9 @@ version = "0.2"
 [dependencies.md5]
 version = "0.7"
 
+[dependencies.tokio-stream]
+version = "0.1.7"
+
 [dependencies.tower]
 version = "0.4"
 [dev-dependencies.aws-config]

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Redshift Data API Service
@@ -108,6 +108,7 @@ where
     ///
     /// See [`DescribeTable`](crate::client::fluent_builders::DescribeTable) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTable::into_paginator).
     pub fn describe_table(&self) -> fluent_builders::DescribeTable<C, M, R> {
         fluent_builders::DescribeTable::new(self.handle.clone())
     }
@@ -122,6 +123,7 @@ where
     ///
     /// See [`GetStatementResult`](crate::client::fluent_builders::GetStatementResult) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetStatementResult::into_paginator).
     pub fn get_statement_result(&self) -> fluent_builders::GetStatementResult<C, M, R> {
         fluent_builders::GetStatementResult::new(self.handle.clone())
     }
@@ -129,6 +131,7 @@ where
     ///
     /// See [`ListDatabases`](crate::client::fluent_builders::ListDatabases) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatabases::into_paginator).
     pub fn list_databases(&self) -> fluent_builders::ListDatabases<C, M, R> {
         fluent_builders::ListDatabases::new(self.handle.clone())
     }
@@ -136,6 +139,7 @@ where
     ///
     /// See [`ListSchemas`](crate::client::fluent_builders::ListSchemas) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
     pub fn list_schemas(&self) -> fluent_builders::ListSchemas<C, M, R> {
         fluent_builders::ListSchemas::new(self.handle.clone())
     }
@@ -143,6 +147,7 @@ where
     ///
     /// See [`ListStatements`](crate::client::fluent_builders::ListStatements) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStatements::into_paginator).
     pub fn list_statements(&self) -> fluent_builders::ListStatements<C, M, R> {
         fluent_builders::ListStatements::new(self.handle.clone())
     }
@@ -150,6 +155,7 @@ where
     ///
     /// See [`ListTables`](crate::client::fluent_builders::ListTables) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTables::into_paginator).
     pub fn list_tables(&self) -> fluent_builders::ListTables<C, M, R> {
         fluent_builders::ListTables::new(self.handle.clone())
     }
@@ -214,10 +220,10 @@ pub mod fluent_builders {
                 crate::input::BatchExecuteStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -357,10 +363,10 @@ pub mod fluent_builders {
                 crate::input::CancelStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -427,10 +433,10 @@ pub mod fluent_builders {
                 crate::input::DescribeStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -501,16 +507,22 @@ pub mod fluent_builders {
                 crate::input::DescribeTableInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeTablePaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeTablePaginator<C, M, R> {
+            crate::paginator::DescribeTablePaginator::new(self.handle, self.inner)
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,10 +673,10 @@ pub mod fluent_builders {
                 crate::input::ExecuteStatementInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -814,16 +826,22 @@ pub mod fluent_builders {
                 crate::input::GetStatementResultInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetStatementResultPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetStatementResultPaginator<C, M, R> {
+            crate::paginator::GetStatementResultPaginator::new(self.handle, self.inner)
         }
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -898,16 +916,22 @@ pub mod fluent_builders {
                 crate::input::ListDatabasesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListDatabasesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListDatabasesPaginator<C, M, R> {
+            crate::paginator::ListDatabasesPaginator::new(self.handle, self.inner)
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1025,16 +1049,22 @@ pub mod fluent_builders {
                 crate::input::ListSchemasInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListSchemasPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListSchemasPaginator<C, M, R> {
+            crate::paginator::ListSchemasPaginator::new(self.handle, self.inner)
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1174,16 +1204,22 @@ pub mod fluent_builders {
                 crate::input::ListStatementsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListStatementsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListStatementsPaginator<C, M, R> {
+            crate::paginator::ListStatementsPaginator::new(self.handle, self.inner)
         }
         /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1312,16 +1348,22 @@ pub mod fluent_builders {
                 crate::input::ListTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTablesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTablesPaginator<C, M, R> {
+            crate::paginator::ListTablesPaginator::new(self.handle, self.inner)
         }
         /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
         pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1427,6 +1469,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

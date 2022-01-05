@@ -61,6 +61,9 @@ version = "1"
 [dependencies.http]
 version = "0.2"
 
+[dependencies.tokio-stream]
+version = "0.1.7"
+
 [dependencies.tower]
 version = "0.4"
 [dev-dependencies.aws-config]

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Resource Groups Tagging API
@@ -94,6 +94,7 @@ where
     ///
     /// See [`GetComplianceSummary`](crate::client::fluent_builders::GetComplianceSummary) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetComplianceSummary::into_paginator).
     pub fn get_compliance_summary(&self) -> fluent_builders::GetComplianceSummary<C, M, R> {
         fluent_builders::GetComplianceSummary::new(self.handle.clone())
     }
@@ -101,6 +102,7 @@ where
     ///
     /// See [`GetResources`](crate::client::fluent_builders::GetResources) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResources::into_paginator).
     pub fn get_resources(&self) -> fluent_builders::GetResources<C, M, R> {
         fluent_builders::GetResources::new(self.handle.clone())
     }
@@ -108,6 +110,7 @@ where
     ///
     /// See [`GetTagKeys`](crate::client::fluent_builders::GetTagKeys) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTagKeys::into_paginator).
     pub fn get_tag_keys(&self) -> fluent_builders::GetTagKeys<C, M, R> {
         fluent_builders::GetTagKeys::new(self.handle.clone())
     }
@@ -115,6 +118,7 @@ where
     ///
     /// See [`GetTagValues`](crate::client::fluent_builders::GetTagValues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTagValues::into_paginator).
     pub fn get_tag_values(&self) -> fluent_builders::GetTagValues<C, M, R> {
         fluent_builders::GetTagValues::new(self.handle.clone())
     }
@@ -197,10 +201,10 @@ pub mod fluent_builders {
                 crate::input::DescribeReportCreationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -260,16 +264,22 @@ pub mod fluent_builders {
                 crate::input::GetComplianceSummaryInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetComplianceSummaryPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetComplianceSummaryPaginator<C, M, R> {
+            crate::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
         }
         /// Appends an item to `TargetIdFilters`.
         ///
@@ -448,16 +458,22 @@ pub mod fluent_builders {
                 crate::input::GetResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetResourcesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetResourcesPaginator<C, M, R> {
+            crate::paginator::GetResourcesPaginator::new(self.handle, self.inner)
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -657,16 +673,22 @@ pub mod fluent_builders {
                 crate::input::GetTagKeysInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTagKeysPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTagKeysPaginator<C, M, R> {
+            crate::paginator::GetTagKeysPaginator::new(self.handle, self.inner)
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -731,16 +753,22 @@ pub mod fluent_builders {
                 crate::input::GetTagValuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetTagValuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetTagValuesPaginator<C, M, R> {
+            crate::paginator::GetTagValuesPaginator::new(self.handle, self.inner)
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
         pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -817,10 +845,10 @@ pub mod fluent_builders {
                 crate::input::StartReportCreationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -905,10 +933,10 @@ pub mod fluent_builders {
                 crate::input::TagResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1017,10 +1045,10 @@ pub mod fluent_builders {
                 crate::input::UntagResourcesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1066,6 +1094,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

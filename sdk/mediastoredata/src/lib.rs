@@ -41,6 +41,8 @@ mod http_serde;
 pub mod input;
 mod json_deser;
 mod json_errors;
+/// Generated accessors for nested fields
+mod lens;
 pub mod middleware;
 /// Data structures used by operation inputs/outputs.
 pub mod model;
@@ -51,6 +53,8 @@ mod operation_deser;
 mod operation_ser;
 /// Output structures for operations.
 pub mod output;
+/// Paginators for the service
+pub mod paginator;
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use aws_smithy_http::byte_stream::ByteStream;

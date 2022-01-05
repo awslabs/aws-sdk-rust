@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Connect Contact Lens
@@ -87,6 +87,7 @@ where
     ///
     /// See [`ListRealtimeContactAnalysisSegments`](crate::client::fluent_builders::ListRealtimeContactAnalysisSegments) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRealtimeContactAnalysisSegments::into_paginator).
     pub fn list_realtime_contact_analysis_segments(
         &self,
     ) -> fluent_builders::ListRealtimeContactAnalysisSegments<C, M, R> {
@@ -151,16 +152,27 @@ pub mod fluent_builders {
                 crate::input::ListRealtimeContactAnalysisSegmentsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListRealtimeContactAnalysisSegmentsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(
+            self,
+        ) -> crate::paginator::ListRealtimeContactAnalysisSegmentsPaginator<C, M, R> {
+            crate::paginator::ListRealtimeContactAnalysisSegmentsPaginator::new(
+                self.handle,
+                self.inner,
+            )
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,6 +216,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for AWS Price List Service
@@ -87,6 +87,7 @@ where
     ///
     /// See [`DescribeServices`](crate::client::fluent_builders::DescribeServices) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeServices::into_paginator).
     pub fn describe_services(&self) -> fluent_builders::DescribeServices<C, M, R> {
         fluent_builders::DescribeServices::new(self.handle.clone())
     }
@@ -94,6 +95,7 @@ where
     ///
     /// See [`GetAttributeValues`](crate::client::fluent_builders::GetAttributeValues) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetAttributeValues::into_paginator).
     pub fn get_attribute_values(&self) -> fluent_builders::GetAttributeValues<C, M, R> {
         fluent_builders::GetAttributeValues::new(self.handle.clone())
     }
@@ -101,6 +103,7 @@ where
     ///
     /// See [`GetProducts`](crate::client::fluent_builders::GetProducts) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetProducts::into_paginator).
     pub fn get_products(&self) -> fluent_builders::GetProducts<C, M, R> {
         fluent_builders::GetProducts::new(self.handle.clone())
     }
@@ -161,16 +164,22 @@ pub mod fluent_builders {
                 crate::input::DescribeServicesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::DescribeServicesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::DescribeServicesPaginator<C, M, R> {
+            crate::paginator::DescribeServicesPaginator::new(self.handle, self.inner)
         }
         /// <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,16 +275,22 @@ pub mod fluent_builders {
                 crate::input::GetAttributeValuesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetAttributeValuesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetAttributeValuesPaginator<C, M, R> {
+            crate::paginator::GetAttributeValuesPaginator::new(self.handle, self.inner)
         }
         /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -369,16 +384,22 @@ pub mod fluent_builders {
                 crate::input::GetProductsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::GetProductsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::GetProductsPaginator<C, M, R> {
+            crate::paginator::GetProductsPaginator::new(self.handle, self.inner)
         }
         /// <p>The code for the service whose products you want to retrieve. </p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -444,6 +465,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {

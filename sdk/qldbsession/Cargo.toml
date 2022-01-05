@@ -69,6 +69,10 @@ path = "../aws-smithy-client"
 version = "0.33.1"
 features = ["test-util"]
 
+[dev-dependencies.aws-smithy-protocol-test]
+path = "../aws-smithy-protocol-test"
+version = "0.33.1"
+
 [dev-dependencies.futures-util]
 version = "0.3"
 

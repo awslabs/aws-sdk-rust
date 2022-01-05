@@ -5,8 +5,8 @@ pub(crate) struct Handle<
     M = crate::middleware::DefaultMiddleware,
     R = aws_smithy_client::retry::Standard,
 > {
-    client: aws_smithy_client::Client<C, M, R>,
-    conf: crate::Config,
+    pub(crate) client: aws_smithy_client::Client<C, M, R>,
+    pub(crate) conf: crate::Config,
 }
 
 /// Client for Amazon Honeycode
@@ -138,6 +138,7 @@ where
     ///
     /// See [`ListTableColumns`](crate::client::fluent_builders::ListTableColumns) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableColumns::into_paginator).
     pub fn list_table_columns(&self) -> fluent_builders::ListTableColumns<C, M, R> {
         fluent_builders::ListTableColumns::new(self.handle.clone())
     }
@@ -145,6 +146,7 @@ where
     ///
     /// See [`ListTableRows`](crate::client::fluent_builders::ListTableRows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableRows::into_paginator).
     pub fn list_table_rows(&self) -> fluent_builders::ListTableRows<C, M, R> {
         fluent_builders::ListTableRows::new(self.handle.clone())
     }
@@ -152,6 +154,7 @@ where
     ///
     /// See [`ListTables`](crate::client::fluent_builders::ListTables) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTables::into_paginator).
     pub fn list_tables(&self) -> fluent_builders::ListTables<C, M, R> {
         fluent_builders::ListTables::new(self.handle.clone())
     }
@@ -159,6 +162,7 @@ where
     ///
     /// See [`QueryTableRows`](crate::client::fluent_builders::QueryTableRows) for more information about the
     /// operation and its arguments.
+    /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryTableRows::into_paginator).
     pub fn query_table_rows(&self) -> fluent_builders::QueryTableRows<C, M, R> {
         fluent_builders::QueryTableRows::new(self.handle.clone())
     }
@@ -227,10 +231,10 @@ pub mod fluent_builders {
                 crate::input::BatchCreateTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -345,10 +349,10 @@ pub mod fluent_builders {
                 crate::input::BatchDeleteTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -464,10 +468,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpdateTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -583,10 +587,10 @@ pub mod fluent_builders {
                 crate::input::BatchUpsertTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -701,10 +705,10 @@ pub mod fluent_builders {
                 crate::input::DescribeTableDataImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -797,10 +801,10 @@ pub mod fluent_builders {
                 crate::input::GetScreenDataInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -934,10 +938,10 @@ pub mod fluent_builders {
                 crate::input::InvokeScreenAutomationInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1085,16 +1089,22 @@ pub mod fluent_builders {
                 crate::input::ListTableColumnsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTableColumnsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTableColumnsPaginator<C, M, R> {
+            crate::paginator::ListTableColumnsPaginator::new(self.handle, self.inner)
         }
         /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -1181,16 +1191,22 @@ pub mod fluent_builders {
                 crate::input::ListTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTableRowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTableRowsPaginator<C, M, R> {
+            crate::paginator::ListTableRowsPaginator::new(self.handle, self.inner)
         }
         /// <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -1304,16 +1320,22 @@ pub mod fluent_builders {
                 crate::input::ListTablesInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::ListTablesPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::ListTablesPaginator<C, M, R> {
+            crate::paginator::ListTablesPaginator::new(self.handle, self.inner)
         }
         /// <p>The ID of the workbook whose tables are being retrieved.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -1398,16 +1420,22 @@ pub mod fluent_builders {
                 crate::input::QueryTableRowsInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
                     aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
                 })?;
             self.handle.client.call(op).await
+        }
+        /// Create a paginator for this request
+        ///
+        /// Paginators are used by calling [`send().await`](crate::paginator::QueryTableRowsPaginator::send) which returns a [`Stream`](tokio_stream::Stream).
+        pub fn into_paginator(self) -> crate::paginator::QueryTableRowsPaginator<C, M, R> {
+            crate::paginator::QueryTableRowsPaginator::new(self.handle, self.inner)
         }
         /// <p>The ID of the workbook whose table rows are being queried.</p>
         /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
@@ -1517,10 +1545,10 @@ pub mod fluent_builders {
                 crate::input::StartTableDataImportJobInputOperationRetryAlias,
             >,
         {
-            let input = self.inner.build().map_err(|err| {
-                aws_smithy_http::result::SdkError::ConstructionFailure(err.into())
-            })?;
-            let op = input
+            let op = self
+                .inner
+                .build()
+                .map_err(|err| aws_smithy_http::result::SdkError::ConstructionFailure(err.into()))?
                 .make_operation(&self.handle.conf)
                 .await
                 .map_err(|err| {
@@ -1611,6 +1639,7 @@ pub mod fluent_builders {
         }
     }
 }
+
 impl<C> Client<C, crate::middleware::DefaultMiddleware, aws_smithy_client::retry::Standard> {
     /// Creates a client with the given service config and connector override.
     pub fn from_conf_conn(conf: crate::Config, conn: C) -> Self {
