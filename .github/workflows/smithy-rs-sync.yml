@@ -11,7 +11,7 @@ env:
   rust_version: 1.54.0
   rust_toolchain_components: clippy,rustfmt
   java_version: 11
-  sync_to_branch: next
+  sync_to_branch: bot-next
 
 jobs:
   run-sync-tool:
@@ -54,7 +54,10 @@ jobs:
           --max-commits-to-sync 1
     - name: push commits
       working-directory: aws-sdk-rust
+      # git config user.name ${{ secrets.GH_USER }}
+      # git config user.email "${{ secrets.GH_MAIL }}"
       run: |
         git config --global user.name "AWS SDK Rust Bot"
         git config --global user.email "aws-sdk-rust-primary@amazon.com"
+        git remote add gh-token "https://${{ secrets.GH_TOKEN }}@github.com/:user/:repo.git"
         git push
