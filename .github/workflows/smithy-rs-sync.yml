@@ -11,6 +11,7 @@ env:
   rust_version: 1.54.0
   rust_toolchain_components: clippy,rustfmt
   java_version: 11
+  sync_to_branch: next
 
 jobs:
   run-sync-tool:
@@ -19,20 +20,16 @@ jobs:
     - name: checkout aws-sdk-rust
       uses: actions/checkout@v2
       with:
-        ref: next
+        ref: ${{ env.sync_to_branch }}
         path: aws-sdk-rust
         fetch-depth: 0
     - name: checkout smithy-rs
       uses: actions/checkout@v2
       with:
         repository: awslabs/smithy-rs
-        ref: sync-script-iteration
+        ref: main
         path: smithy-rs
         fetch-depth: 0
-    # - name: checkout aws-sdk-rust
-    #   run: git clone --branch next https://github.com/awslabs/aws-sdk-rust.git aws-sdk-rust
-    # - name: checkout smithy-rs
-    #   run: git clone --branch sync-script-iteration https://github.com/awslabs/smithy-rs.git smithy-rs
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
@@ -43,16 +40,20 @@ jobs:
         java-version: ${{ env.java_version }}
     - name: fetch aws-sdk-rust
       working-directory: aws-sdk-rust
-      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin next
+      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin ${{ env.sync_to_branch }}
     - name: fetch smithy-rs
       working-directory: smithy-rs
-      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin sync-script-iteration
+      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin main
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
         cargo run -- \
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
-          --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust
+          --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
+          --branch ${{ env.sync_to_branch }}
     - name: push commits
-      run: git push
       working-directory: aws-sdk-rust
+      run: |
+        git config --global user.name "AWS SDK Rust Bot"
+        git config --global user.email "aws-sdk-rust-primary@amazon.com"
+        git push
